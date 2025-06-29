@@ -1,63 +1,24 @@
 model_list:
   # OpenAI Models
-  - model_name: gpt-4o
-    litellm_params:
-      model: openai/gpt-4o
-      api_key: os.environ/OPENAI_API_KEY
   - model_name: gpt-4o-mini
     litellm_params:
-      model: openai/gpt-4o-mini
+      model: gpt-4o-mini
       api_key: os.environ/OPENAI_API_KEY
-  - model_name: gpt-4-turbo
+  - model_name: gpt-4o
     litellm_params:
-      model: openai/gpt-4-turbo
-      api_key: os.environ/OPENAI_API_KEY
-  - model_name: gpt-3.5-turbo
-    litellm_params:
-      model: openai/gpt-3.5-turbo
+      model: gpt-4o
       api_key: os.environ/OPENAI_API_KEY
 
-  # Anthropic Models
+  # Anthropic Models  
   - model_name: claude-3-5-sonnet-20241022
     litellm_params:
-      model: anthropic/claude-3-5-sonnet-20241022
+      model: claude-3-5-sonnet-20241022
       api_key: os.environ/ANTHROPIC_API_KEY
   - model_name: claude-3-5-haiku-20241022
     litellm_params:
-      model: anthropic/claude-3-5-haiku-20241022
+      model: claude-3-5-haiku-20241022
       api_key: os.environ/ANTHROPIC_API_KEY
-  - model_name: claude-3-opus-20240229
-    litellm_params:
-      model: anthropic/claude-3-opus-20240229
-      api_key: os.environ/ANTHROPIC_API_KEY
-
-  # Google Gemini Models
-  - model_name: gemini-1.5-pro
-    litellm_params:
-      model: gemini/gemini-1.5-pro
-      api_key: os.environ/GEMINI_API_KEY
-  - model_name: gemini-1.5-flash
-    litellm_params:
-      model: gemini/gemini-1.5-flash
-      api_key: os.environ/GEMINI_API_KEY
-
-  # Groq Models (Fast inference)
-  - model_name: llama-3.1-70b-versatile
-    litellm_params:
-      model: groq/llama-3.1-70b-versatile
-      api_key: os.environ/GROQ_API_KEY
-  - model_name: llama-3.1-8b-instant
-    litellm_params:
-      model: groq/llama-3.1-8b-instant
-      api_key: os.environ/GROQ_API_KEY
 
 # General settings
 general_settings:
   master_key: os.environ/LITELLM_MASTER_KEY
-  database_url: os.environ/DATABASE_URL # Optional: for usage tracking
-  
-# Optional: Enable request/response logging
-litellm_settings:
-  success_callback: ["langfuse"] # Optional: for monitoring
-  failure_callback: ["langfuse"]
-  set_verbose: true
